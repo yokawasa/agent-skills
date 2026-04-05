@@ -1,8 +1,8 @@
-name: Claude Code Review
+name: Claude Code PR Review
 
 on:
   pull_request:
-    types: [opened, synchronize, ready_for_review, reopened]
+    types: [opened, ready_for_review, reopened]
     # Optional: Only run on specific file changes
     # paths:
     #   - "src/**/*.ts"
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pull-requests: read
+      pull-requests: write
       issues: read
       id-token: write
 
@@ -36,9 +36,39 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          plugin_marketplaces: 'https://github.com/anthropics/claude-code.git'
-          plugins: 'code-review@claude-code-plugins'
-          prompt: '/code-review:code-review ${{ github.repository }}/pull/${{ github.event.pull_request.number }}'
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+
+            このPRをレビューしてください。以下の観点で確認してください：
+
+            **スキル定義の品質**
+            - SKILL.md のフロントマター（name, description）が正しく記述されているか
+            - `description` フィールドがトリガー条件として書かれているか（スキルの要約ではなく「いつ使うか」の記述になっているか）
+            - スキル名がkebab-caseの命名規則に従っているか
+
+            **指示の明確さと実用性**
+            - スキルの指示がClaude Codeにとって明確で実行可能か
+            - [MUST] / [SHOULD] / [MAY] の規範強度が適切に使われているか
+            - 指示が曖昧・矛盾・冗長になっていないか
+
+            **参照ファイルの構成**
+            - 大きな知識ベースはreferences/*.mdに適切に分割されているか
+            - SKILL.md 内の参照テーブルに各ファイルの内容と読み込みタイミングが記載されているか
+            - ファイル名がlowercase_underscore形式に従っているか
+
+            **README.mdの整合性**
+            - 新規スキルがREADME.mdのSkillsテーブルに追加されているか
+            - スキル名・説明がREADMEに正しく反映されているか
+
+            **その他**
+            - 機密情報・個人情報がスキル定義に含まれていないか
+            - スキルの対象言語（日本語/英語）がターゲットユーザーに合っているか
+
+            問題箇所には `mcp__github_inline_comment__create_inline_comment` でインラインコメントを付けてください。
+            全体サマリーは `gh pr comment` でポストしてください。
+          claude_args: |
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*)"
           # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
           # or https://code.claude.com/docs/en/cli-reference for available options
 
