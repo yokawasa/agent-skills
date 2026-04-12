@@ -34,3 +34,9 @@ build/
 # Temp
 *.tmp
 *.bak
+
+# Claude
+.claude/settings.local.json
+
+# Custom
+t

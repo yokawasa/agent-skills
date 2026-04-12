@@ -1,0 +1,41 @@
+{
+  "eval_id": 2,
+  "eval_name": "async-api",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "処理受付時に202 Acceptedを使用しているか",
+      "passed": true,
+      "evidence": "202 Acceptedを処理開始エンドポイントで使用"
+    },
+    {
+      "text": "LocationヘッダーでステータスURLを返す設計になっているか",
+      "passed": true,
+      "evidence": "グレップでLocationヘッダーをwithout_skillファイルに確認"
+    },
+    {
+      "text": "処理完了時に303 See Otherを使用しているか",
+      "passed": false,
+      "evidence": "グレップで303はwith_skillファイルのみ。without_skillはステータス確認を常に200 OKで返すパターンを採用"
+    },
+    {
+      "text": "ステータス確認エンドポイントのURI設計が示されているか",
+      "passed": true,
+      "evidence": "GET /v1/residents/bulk-conversions/jobs/{jobId} のURIを定義"
+    },
+    {
+      "text": "各フェーズのレスポンスボディ（JSON）が具体的に示されているか",
+      "passed": true,
+      "evidence": "accepted/processing/completed/failed の各フェーズのJSONを提示"
+    }
+  ],
+  "pass_count": 4,
+  "total_count": 5,
+  "pass_rate": 0.8,
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

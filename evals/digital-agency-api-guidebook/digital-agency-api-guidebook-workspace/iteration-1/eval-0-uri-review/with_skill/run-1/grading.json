@@ -1,0 +1,41 @@
+{
+  "eval_id": 0,
+  "eval_name": "uri-review",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "[MUST]/[SHOULD]/[MAY]の規範強度表記が使われているか",
+      "passed": true,
+      "evidence": "グレップで [MUST], [SHOULD] がwith_skillファイルにのみ確認された"
+    },
+    {
+      "text": "URIに動詞が含まれている問題を指摘しているか",
+      "passed": true,
+      "evidence": "getResidentCard, updateAddress, remove の動詞問題を明示的に指摘"
+    },
+    {
+      "text": "HTTPメソッドの誤用を指摘しているか",
+      "passed": true,
+      "evidence": "POST/GETのCRUDセマンティクス不一致を [SHOULD] 違反として指摘"
+    },
+    {
+      "text": "修正後のURI案を具体的に提示しているか",
+      "passed": true,
+      "evidence": "GET /api/v1/resident_cards/{user_id} 等の修正案を表で提示"
+    },
+    {
+      "text": "デジタル庁ガイドブックへの言及があるか",
+      "passed": true,
+      "evidence": "「デジタル庁 APIテクニカルガイドブック（DS-464-2, 2024年9月30日版）」を明示"
+    }
+  ],
+  "pass_count": 5,
+  "total_count": 5,
+  "pass_rate": 1.0,
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

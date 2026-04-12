@@ -1,0 +1,41 @@
+{
+  "eval_id": 0,
+  "eval_name": "uri-review",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "[MUST]/[SHOULD]/[MAY]の規範強度表記が使われているか",
+      "passed": false,
+      "evidence": "グレップで [MUST]/[SHOULD]/[MAY] はwithout_skillファイルに存在しない"
+    },
+    {
+      "text": "URIに動詞が含まれている問題を指摘しているか",
+      "passed": true,
+      "evidence": "getResidentCard, updateAddress, removeの動詞問題を指摘している"
+    },
+    {
+      "text": "HTTPメソッドの誤用を指摘しているか",
+      "passed": true,
+      "evidence": "POST→GET, GET→PUT/PATCH の誤用を一般的なRESTプラクティスで指摘"
+    },
+    {
+      "text": "修正後のURI案を具体的に提示しているか",
+      "passed": true,
+      "evidence": "GET /api/v1/users/{userId}/resident-card 等の修正案を提示"
+    },
+    {
+      "text": "デジタル庁ガイドブックへの言及があるか",
+      "passed": false,
+      "evidence": "グレップで「デジタル庁」「DS-464-2」はwithout_skillファイルに存在しない"
+    }
+  ],
+  "pass_count": 3,
+  "total_count": 5,
+  "pass_rate": 0.6,
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5,
+    "pass_rate": 0.6
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "reviews": [
+    {
+      "run_id": "eval-0-uri-review-with_skill",
+      "feedback": "very good",
+      "timestamp": "2026-04-12T04:17:08.465Z"
+    },
+    {
+      "run_id": "eval-0-uri-review-without_skill",
+      "feedback": "\uff1e**\u30ea\u30bd\u30fc\u30b9\u306e\u547d\u540d**: `ResidentCard` \u306f\u30ad\u30e3\u30e1\u30eb\u30b1\u30fc\u30b9\u3067\u3059\u304c\u3001URI\u306f\u30b1\u30d0\u30d6\u30b1\u30fc\u30b9\uff08kebab-case\uff09\u307e\u305f\u306f\u30b9\u30cd\u30fc\u30af\u30b1\u30fc\u30b9\u3067\u7d71\u4e00\u3059\u308b\u306e\u304c\u4e00\u822c\u7684\n\uff1e3. **URI\u306e\u547d\u540d\u306f\u30b1\u30d0\u30d6\u30b1\u30fc\u30b9\uff08kebab-case\uff09\u3092\u63a8\u5968**\n\uff1e   - \u4f8b: `/resident-card`, `/user-address`\n\n\u30ac\u30a4\u30c9\u30e9\u30a4\u30f3\u3067\u306f\u30b9\u30cd\u30fc\u30af\u30b1\u30fc\u30b9\u3092\u63a8\u5968\u3057\u3066\u3044\u308b",
+      "timestamp": "2026-04-12T04:17:08.465Z"
+    },
+    {
+      "run_id": "eval-1-error-response-with_skill",
+      "feedback": "> - **[MUST]** `Content-Type` \u30d8\u30c3\u30c0\u30fc\u306b\u306f `application/problem+json` \u3092\u4f7f\u7528\u3059\u308b\u3053\u3068\n\u3053\u308c\u306fMUST\u3067\u306f\u306a\u3044\u3068\u304a\u3082\u3046\n\n\uff1e `errors` | \u914d\u5217\uff08\u62e1\u5f35\u30d5\u30a3\u30fc\u30eb\u30c9\uff09 | RFC 7807 \u62e1\u5f35\u30d5\u30a3\u30fc\u30eb\u30c9 **[MAY]**\u3002\u8907\u6570\u30d0\u30ea\u30c7\u30fc\u30b7\u30e7\u30f3\u30a8\u30e9\u30fc\u3092\u4e00\u62ec\u3067\u8fd4\u3059\u305f\u3081\u306b\u4f7f\u7528 |\n\n\u3053\u308c\u306f\u30ac\u30a4\u30c9\u30e9\u30a4\u30f3\u306b\u306f\u660e\u8a18\u3057\u3066\u3044\u306a\u3044\n\n\u3053\u308c\u306fMUST\u3067\u306f\u306a\u304f\u3001SHOULD\u3060\u3063\u305f\u306f\u305a",
+      "timestamp": "2026-04-12T04:17:08.465Z"
+    },
+    {
+      "run_id": "eval-1-error-response-without_skill",
+      "feedback": "> | \u8907\u6570\u30a8\u30e9\u30fc | `errors` \u914d\u5217\u3067\u4e00\u5ea6\u306b\u5168\u3066\u8fd4\u3059 |\n\n\u3053\u3093\u306a\u3053\u3068\u3092\u30ac\u30a4\u30c9\u30e9\u30a4\u30f3\u306b\u306f\u304b\u3044\u3066\u3044\u306a\u3044",
+      "timestamp": "2026-04-12T04:17:08.465Z"
+    },
+    {
+      "run_id": "eval-2-async-api-with_skill",
+      "feedback": "\uff1e  HTTP \u30e1\u30bd\u30c3\u30c9\u306f\u65b0\u898f\u30b8\u30e7\u30d6\u4f5c\u6210\u306a\u306e\u3067 `POST` \u3092\u4f7f\u7528 **[MUST]**\n\n\u3053\u308c\u306fSHOULD\u3067\u3059",
+      "timestamp": "2026-04-12T04:17:08.465Z"
+    }
+  ],
+  "status": "in_progress"
+}

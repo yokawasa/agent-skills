@@ -1,0 +1,107 @@
+{
+  "skill_name": "digital-agency-api-guidebook",
+  "evals": [
+    {
+      "id": 0,
+      "name": "uri-review",
+      "prompt": "我々の住民票APIを政府ガイドラインに照らしてレビューしてほしいです。現在のエンドポイント設計はこうなっています：\n- POST /api/v1/getResidentCard/{userId}\n- GET /api/v1/updateAddress\n- DELETE /api/v1/userAddress/remove/{id}\n\n問題点と改善案を具体的に教えてください。",
+      "expected_output": "デジタル庁APIテクニカルガイドブックの規則（名詞・複数形、スネイクケース、HTTPメソッドのCRUD対応、URIに動詞を含めない等）に基づいた具体的な指摘と修正案",
+      "files": [],
+      "assertions": [
+        {
+          "id": "mentions_must_should",
+          "description": "[MUST]/[SHOULD]/[MAY]の規範強度表記が使われているか",
+          "check": "response contains [MUST] or [SHOULD] normative markers"
+        },
+        {
+          "id": "identifies_verb_in_uri",
+          "description": "URIに動詞（getResidentCard, updateAddress, remove）が含まれている問題を指摘しているか",
+          "check": "response identifies verbs in URIs as a violation"
+        },
+        {
+          "id": "identifies_wrong_http_method",
+          "description": "HTTPメソッドの誤用（POST/GET/DELETE）を指摘しているか",
+          "check": "response identifies incorrect HTTP method usage"
+        },
+        {
+          "id": "provides_corrected_uris",
+          "description": "修正後のURI案を具体的に提示しているか",
+          "check": "response includes corrected URI examples"
+        },
+        {
+          "id": "references_guidebook",
+          "description": "デジタル庁ガイドブックへの言及があるか",
+          "check": "response references Digital Agency guidebook or DS-464-2"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "error-response",
+      "prompt": "行政手続きAPIで422バリデーションエラーが起きたときのレスポンスボディをどう設計すればよいですか？政府標準に沿った形式で教えてください。フィールド例として「申請者氏名（applicant_name）が空」「生年月日（birth_date）のフォーマット不正」という2つのバリデーションエラーが同時に起きる場合のレスポンスも見せてください。",
+      "expected_output": "RFC 7807準拠（status/type/title/detail/instance）のエラーレスポンスJSONサンプルと、Content-Type: application/problem+jsonの指定",
+      "files": [],
+      "assertions": [
+        {
+          "id": "rfc7807_fields",
+          "description": "RFC 7807必須フィールド（status, type, title, detail, instance）が全て含まれているか",
+          "check": "response JSON includes status, type, title, detail, instance fields"
+        },
+        {
+          "id": "correct_content_type",
+          "description": "Content-Type: application/problem+jsonが指定されているか",
+          "check": "response mentions application/problem+json content type"
+        },
+        {
+          "id": "status_422",
+          "description": "HTTPステータス422が正しく使われているか",
+          "check": "response uses 422 status code correctly"
+        },
+        {
+          "id": "concrete_json_example",
+          "description": "具体的なJSONサンプルが提示されているか",
+          "check": "response includes a concrete JSON code block"
+        },
+        {
+          "id": "multiple_errors_handled",
+          "description": "複数バリデーションエラーの同時返却パターンが示されているか",
+          "check": "response shows how to return multiple validation errors"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "async-api",
+      "prompt": "住民票の一括データ変換処理（数分かかる）のAPIを設計しています。デジタル庁のガイドラインに基づいた非同期APIの完全な仕様を作ってください。以下を含めてください：\n1. 処理開始エンドポイント（URI・メソッド・レスポンス）\n2. ステータス確認エンドポイント\n3. 結果取得の流れ\n4. 各段階のHTTPステータスコードとレスポンスボディ",
+      "expected_output": "202 Accepted + LocationヘッダーでのジョブID返却、ステータス確認エンドポイント、303 See Otherでの結果URLリダイレクトを含む完全な非同期API仕様",
+      "files": [],
+      "assertions": [
+        {
+          "id": "202_accepted",
+          "description": "処理受付時に202 Acceptedを使用しているか",
+          "check": "response specifies 202 Accepted for initial request"
+        },
+        {
+          "id": "location_header",
+          "description": "LocationヘッダーでステータスURLを返す設計になっているか",
+          "check": "response includes Location header with status URL"
+        },
+        {
+          "id": "303_see_other",
+          "description": "処理完了時に303 See Otherを使用しているか",
+          "check": "response uses 303 See Other for completion redirect"
+        },
+        {
+          "id": "status_endpoint",
+          "description": "ステータス確認エンドポイントのURI設計が示されているか",
+          "check": "response defines a status check endpoint URI"
+        },
+        {
+          "id": "response_bodies_shown",
+          "description": "各フェーズのレスポンスボディ（JSON）が具体的に示されているか",
+          "check": "response includes JSON response bodies for each phase"
+        }
+      ]
+    }
+  ]
+}

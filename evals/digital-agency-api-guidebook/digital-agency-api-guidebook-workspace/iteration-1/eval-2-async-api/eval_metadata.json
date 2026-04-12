@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "eval_name": "async-api",
+  "prompt": "住民票の一括データ変換処理（数分かかる）のAPIを設計しています。デジタル庁のガイドラインに基づいた非同期APIの完全な仕様を作ってください。以下を含めてください：\n1. 処理開始エンドポイント（URI・メソッド・レスポンス）\n2. ステータス確認エンドポイント\n3. 結果取得の流れ\n4. 各段階のHTTPステータスコードとレスポンスボディ",
+  "assertions": [
+    {"id": "202_accepted", "description": "処理受付時に202 Acceptedを使用しているか"},
+    {"id": "location_header", "description": "LocationヘッダーでステータスURLを返す設計になっているか"},
+    {"id": "303_see_other", "description": "処理完了時に303 See Otherを使用しているか"},
+    {"id": "status_endpoint", "description": "ステータス確認エンドポイントのURI設計が示されているか"},
+    {"id": "response_bodies_shown", "description": "各フェーズのレスポンスボディ（JSON）が具体的に示されているか"}
+  ]
+}
