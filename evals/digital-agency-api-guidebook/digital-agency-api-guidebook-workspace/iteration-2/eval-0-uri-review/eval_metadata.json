@@ -1,0 +1,12 @@
+{
+  "eval_id": 0,
+  "eval_name": "uri-review",
+  "prompt": "我々の住民票APIを政府ガイドラインに照らしてレビューしてほしいです。現在のエンドポイント設計はこうなっています：\n- POST /api/v1/getResidentCard/{userId}\n- GET /api/v1/updateAddress\n- DELETE /api/v1/userAddress/remove/{id}\n\n問題点と改善案を具体的に教えてください。",
+  "assertions": [
+    {"id": "mentions_must_should", "description": "[MUST]/[SHOULD]/[MAY]の規範強度表記が使われているか"},
+    {"id": "identifies_verb_in_uri", "description": "URIに動詞が含まれている問題を指摘しているか"},
+    {"id": "identifies_wrong_http_method", "description": "HTTPメソッドの誤用を指摘しているか"},
+    {"id": "provides_corrected_uris", "description": "修正後のURI案を具体的に提示しているか"},
+    {"id": "references_guidebook", "description": "デジタル庁ガイドブックへの言及があるか"}
+  ]
+}

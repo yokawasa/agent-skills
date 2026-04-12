@@ -1,0 +1,38 @@
+{
+  "eval_id": 1,
+  "eval_name": "error-response",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "RFC 7807必須フィールド（status, type, title, detail, instance）が全て含まれているか",
+      "passed": true,
+      "evidence": "5フィールドすべて含まれたJSONサンプルを提示"
+    },
+    {
+      "text": "Content-Type: application/problem+jsonが指定されているか",
+      "passed": true,
+      "evidence": "application/problem+json を明示。今回は [SHOULD] と正しく表記（iteration-1の [MUST] 誤表記を修正）"
+    },
+    {
+      "text": "HTTPステータス422が正しく使われているか",
+      "passed": true,
+      "evidence": "422 Unprocessable Entity を正しく使用"
+    },
+    {
+      "text": "具体的なJSONサンプルが提示されているか",
+      "passed": true,
+      "evidence": "基本RFC 7807準拠版と errors拡張版の2パターンを提示"
+    },
+    {
+      "text": "複数バリデーションエラーの同時返却パターンが示されているか",
+      "passed": true,
+      "evidence": "errors配列で2エラー同時返却を示しつつ「ガイドラインには規定なし・一般的プラクティス」と正しく注記"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

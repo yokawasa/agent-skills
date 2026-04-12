@@ -1,0 +1,41 @@
+{
+  "eval_id": 2,
+  "eval_name": "async-api",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "処理受付時に202 Acceptedを使用しているか",
+      "passed": true,
+      "evidence": "202 Accepted + Location ヘッダーを [MUST] として明示"
+    },
+    {
+      "text": "LocationヘッダーでステータスURLを返す設計になっているか",
+      "passed": true,
+      "evidence": "グレップでLocationヘッダーをwith_skillファイルに確認"
+    },
+    {
+      "text": "処理完了時に303 See Otherを使用しているか",
+      "passed": true,
+      "evidence": "グレップで303 See Otherをwith_skillファイルのみに確認。ステータス確認エンドポイント完了時に正しく使用"
+    },
+    {
+      "text": "ステータス確認エンドポイントのURI設計が示されているか",
+      "passed": true,
+      "evidence": "/v1/resident_records/batch_conversions/status/{task_id} のURIを明示"
+    },
+    {
+      "text": "各フェーズのレスポンスボディ（JSON）が具体的に示されているか",
+      "passed": true,
+      "evidence": "受付・処理中・完了・失敗の4フェーズすべてのJSONボディを提示"
+    }
+  ],
+  "pass_count": 5,
+  "total_count": 5,
+  "pass_rate": 1.0,
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

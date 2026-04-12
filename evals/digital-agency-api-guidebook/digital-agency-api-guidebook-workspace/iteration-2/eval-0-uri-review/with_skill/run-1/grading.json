@@ -1,0 +1,38 @@
+{
+  "eval_id": 0,
+  "eval_name": "uri-review",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "[MUST]/[SHOULD]/[MAY]の規範強度表記が使われているか",
+      "passed": true,
+      "evidence": "[SHOULD] マーカーを正しく使用。HTTPメソッドの誤用も [SHOULD] として表記し、[MUST] への誤昇格なし"
+    },
+    {
+      "text": "URIに動詞が含まれている問題を指摘しているか",
+      "passed": true,
+      "evidence": "getResidentCard, updateAddress, remove の動詞問題を全て指摘"
+    },
+    {
+      "text": "HTTPメソッドの誤用を指摘しているか",
+      "passed": true,
+      "evidence": "POST→GET, GET→PATCH/PUT の誤用を [SHOULD] 違反として指摘"
+    },
+    {
+      "text": "修正後のURI案を具体的に提示しているか",
+      "passed": true,
+      "evidence": "snake_caseを使った修正URI (resident_cards, addresses) を提示"
+    },
+    {
+      "text": "デジタル庁ガイドブックへの言及があるか",
+      "passed": true,
+      "evidence": "DS-464-2への明示的な言及あり"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

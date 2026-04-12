@@ -1,0 +1,12 @@
+{
+  "eval_id": 1,
+  "eval_name": "error-response",
+  "prompt": "行政手続きAPIで422バリデーションエラーが起きたときのレスポンスボディをどう設計すればよいですか？政府標準に沿った形式で教えてください。フィールド例として「申請者氏名（applicant_name）が空」「生年月日（birth_date）のフォーマット不正」という2つのバリデーションエラーが同時に起きる場合のレスポンスも見せてください。",
+  "assertions": [
+    {"id": "rfc7807_fields", "description": "RFC 7807必須フィールド（status, type, title, detail, instance）が全て含まれているか"},
+    {"id": "correct_content_type", "description": "Content-Type: application/problem+jsonが指定されているか"},
+    {"id": "status_422", "description": "HTTPステータス422が正しく使われているか"},
+    {"id": "concrete_json_example", "description": "具体的なJSONサンプルが提示されているか"},
+    {"id": "multiple_errors_handled", "description": "複数バリデーションエラーの同時返却パターンが示されているか"}
+  ]
+}
