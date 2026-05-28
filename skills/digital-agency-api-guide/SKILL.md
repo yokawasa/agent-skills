@@ -1,5 +1,5 @@
 ---
-name: digital-agency-api-guidebook
+name: digital-agency-api-guide
 description: >
   デジタル庁「APIテクニカルガイドブック（DS-464-2, 2024年9月30日版）」に基づいて、
   WebAPI の設計支援・レビュー・仕様生成を行うスキル。

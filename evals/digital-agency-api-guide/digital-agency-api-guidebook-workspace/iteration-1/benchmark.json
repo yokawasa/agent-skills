@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "skill_name": "digital-agency-api-guidebook",
+    "skill_name": "digital-agency-api-guide",
     "skill_path": "<path/to/skill>",
     "executor_model": "<model-name>",
     "analyzer_model": "<model-name>",

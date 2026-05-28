@@ -1,4 +1,4 @@
-# Skill Benchmark: digital-agency-api-guidebook
+# Skill Benchmark: digital-agency-api-guide
 
 **Model**: <model-name>
 **Date**: 2026-04-12T03:43:13Z
