@@ -49,7 +49,7 @@ For skills with large bodies of knowledge, split content into `references/*.md` 
 
 ## Conventions
 
-- Skill names use kebab-case (`digital-agency-api-guidebook`)
+- Skill names use kebab-case (`digital-agency-api-guide`)
 - Reference filenames are short, lowercase, underscore-separated (`uri_request.md`)
 - Normative strength in skill instructions follows the pattern: **[MUST]** / **[SHOULD]** / **[MAY]**
 - Skills are language-agnostic at the file level; the skill body may be in Japanese or English depending on the target audience
