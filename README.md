@@ -9,6 +9,7 @@ The following table lists the skills currently available in this repository. Mor
 | Skill Name | Description |
 |------------|----------------------------------------------------------------------------------|
 | [digital-agency-api-guide](./skills/digital-agency-api-guide) | A skill for supporting Web API design, review, and specification generation based on the Digital Agency’s “[API Technical Guidebook (デジタル庁「APIテクニカルガイドブック」)](https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/fe5f0631-c978-42db-8416-6759cfa7e53a/f6ca1b7b/20241001_policies_development_management_outline_04.pdf)” published on Sept 30, 2024.|
+| [japanese-tech-writing](./skills/japanese-tech-writing) | Writing and editing norms for Japanese technical documents (book chapters, articles, explainers) — formatting, paragraph-level argument structure, rigor, reader load, voice, restraint in rhetoric, and avoiding LLM-sounding filler. Based on [k16shikano's original SKILL.md](https://gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d) (Unlicense), with additional points from real editing sessions added by [@yokawasa](https://github.com/yokawasa). |
 
 ## How to Install/Update Skills
 
@@ -58,4 +59,3 @@ If you find any mistakes or areas for improvement, feel free to submit a pull re
 ## License
 
 [MIT](./LICENSE)
-
